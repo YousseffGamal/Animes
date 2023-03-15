@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css"
+      integrity="sha512-L+sMmtHht2t5phORf0xXFdTC0rSlML1XcraLTrABli/0MMMylsJi3XA23ReVQkZ7jLkOEIMicWGItyK4CAt2Xw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Anime Episode List</title>
+    <style>
+      body.dark-mode {
+        border: none;
+        background-color: black;
+        color: black;
+      }
+
+      #darkmode-btn {
+        border: none;
+        background-color: white;
+        color: black;
+      }
+
+      body.dark-mode #darkmode-btn {
+        border: none;
+        background-color: black;
+        color: black;
+      }
+
+      /* Add some style to the page */
+
+      body {
+        background-color: #f2f2f2;
+
+        font-family: Arial, sans-serif;
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+      }
+
+      p {
+        margin: 10px auto;
+        max-width: 600px;
+        text-align: justify;
+      }
+      /* Add style to the anime card */
+      .anime-card {
+        background-color: #f2f2f2;
+        display: inline-block;
+        margin: 20px;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        width: 300px;
+        height: 450px;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .anime-poster {
+        height: 70%;
+        object-fit: cover;
+        border-radius: 5px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .anime-poster:hover {
+        transform: scale(1.05);
+      }
+
+      .anime-title {
+        margin-top: 10px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .anime-description {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 1.6;
+        overflow: hidden;
+        height: 100px;
+      }
+
+      .read-more {
+        display: block;
+        margin-top: 10px;
+        font-size: 12px;
+        color: #007bff;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color 0.3s ease-in-out;
+      }
+
+      .read-more:hover {
+        color: #0056b3;
+      }
+      /* Add animation to the episode cards */
+      .episode-card {
+        background-color: #f2f2f2;
+        display: inline-block;
+        margin: 20px;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        animation-name: zoom-in-out;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+      }
+
+      /* Add animation to the episode thumbnails */
+      .episode-thumbnail {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        max-width: 200px;
+        border: none;
+
+        animation-name: zoom-in-out;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+      }
+
+      /* Add animation to the watch button */
+      .watch-btn {
+        display: block;
+        margin: 10px auto 0;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <button id="darkmode-btn" onclick="toggleDarkMode()">
+      <i class="fas fa-moon"></i>
+    </button> -->
+
+    <section>
+      <div class="anime-card">
+        <img
+          class="anime-poster"
+          src="images/71pd0jEdHzL._AC_SY879_.jpg"
+          alt="Anime Title Poster"
+        />
+        <div class="anime-details">
+          <p class="anime-title">Boruto</p>
+          <p class="anime-description">
+            The story of the Boruto: Naruto Next Generations anime revolves
+            around Naruto, who was a young shinobi with supernatural talent who
+            was able to achieve his dream of becoming the best ninja in the
+            village, so that his face would then be pushed over the statue of
+            the Hokage. In this anime, a new generation of ninja will appear,
+            ready to take the torch and be led by his son Naruto: Boruto!
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <!-- Add more anime cards as needed -->
+    </section>
+    <!-- Anime Episode List -->
+    <header>
+      <h1>Anime Episode List</h1>
+    </header>
+
+    <section>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <a style="text-decoration: none" href="episode.html">
+          <button class="watch-btn">Watch</button></a
+        >
+      </div>
+
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 2"
+        />
+        <p>Episode 2: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+      <div class="episode-card">
+        <img
+          class="episode-thumbnail"
+          src="images/thumbnail-Boruto-Naruto-Next-Generations-5f075a989ad31.png"
+          alt="Episode 1"
+        />
+        <p>Episode 1: Episode Title</p>
+        <button class="watch-btn">Watch</button>
+      </div>
+
+      <!-- Add more episodes as needed -->
+    </section>
+
+    <script>
+      // Add animation to the watch button
+      var btns = document.getElementsByClassName("watch-btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("mouseover", function () {
+          this.style.backgroundColor = "#FF5733";
+        });
+        btns[i].addEventListener("mouseout", function () {
+          this.style.backgroundColor = "#4CAF50";
+        });
+      }
+      function toggleDarkMode() {
+        var body = document.querySelector("body");
+        body.classList.toggle("dark-mode");
+      }
+    </script>
+  </body>
+</html>
